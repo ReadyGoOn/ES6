@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+        Symbol 表示独一无二的值，它是js中的第七种数据类型。不能使用new调用。是基本数据类型。
+        基本数据类型：Null,Undefined,Number,Blooean,String,Symbol;
+        引用数据类型：Object.
+    */
+
+    /**
+         Symbol相当于一个函数。不能使用new调用。是基本数据类型。
+        如下s1表示一个独一无二的值，
+        Symbol函数接收一个字符串作为参数，表示对Symbol的描述，主要是控制台显示，或者转化为字符串的时候，比较容易区分。
+        可以转化为字符串String(Symbol()),Symbol().toString(),
+        可以转化为布尔值且始终为true，
+        不可以转化为数字，否则会报错。
+        不可以进行运算，也不可以进行字符串拼接。
+    */
+    
+    let s1 = Symbol();
+    console.log(typeof s1);
+    let s2 = Symbol('miaov');
+    let s3 = Symbol('lession');
+    console.log(s2,s3);
+
+
+    const data = {
+        [Symbol()]:123,
+        a:1,
+        b:2
+    }
+    // data[Symbol()]是无法获取的。
+    // for...in也无法遍历
+    // Object.getOwnPropertySymbols方法可以获得一个对象的所有的Symbol属性
+    console.log(Object.getOwnPropertySymbols(data));//返回所有的Symbol属性数组
+    console.log(data[Object.getOwnPropertySymbols(data)[0]]);
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    字典：使用来存储不重复KEY的hash结构，不同于集合（set）的是，字典类型使用的【键，值】的形式来存储数据的。<br/>
+    javascript的对象中只能用字符串当做键，这给使用时带来了很大限制<br/>
+    map数据结构，类似于对象，也是键值对的组合，但键不仅仅局限于字符串，各种类型（包括对象）都可以.<br/>
+    const map = new Map([['q',1],['a,s']])<br/>
+    set(key,value),可链式添加<br/>
+    get(key) 找得到则返回对应的值，找不到则返回undefined<br/>
+    delete(key) 删除每个键，返回布尔值<br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</body>
+<script>
+    const map = new Map([['q',1],['a,s',1],['z',12]]);
+    console.log(map);
+    console.log(map.size);
+    //map.set(key,value),可链式添加
+    map.set('qw','er').set('q1',21543)
+    //map.get(key) 找得到则返回对应的值，找不到则返回undefined
+    map.get('q1')
+    //delete(key) 删除每个键，返回布尔值
+    map.delete('q2w')
+    //map.has(key)是否有某个key，返回布尔，
+    //map.clear()清空所有数据，没有返回值
+    //map.keys|(),map.values()，map.entries()分别返回键名，键值和键值对的遍历器
+    //map.forEach(function(key,value,map){})使用回调函数遍历每个成员
+    //
+    //
+    //
+    console.log(map);
+    console.log(map.delete('q2w'));
+    console.log(map);
+</script>
+</html>

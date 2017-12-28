@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>内置对象的扩展</title>
+</head>
+<body>
+    
+    
+</body>
+<script>
+    /**
+        1.模板字符串
+        ``可换行拼接；${}：字符串;控制显示隐藏
+        还可做运算
+        如下：
+    */
+    let flag = true,
+        flag1 = false;
+    let html = `<ul>
+        <li>${'首页'}</li>
+        <li class="${flag ? 'show' : 'hide'}"></li>
+        <li></li>
+        <li class="${flag1 ? 'show' : 'hide'}"></li>
+    </ul>`;
+
+    console.log(html);
+
+    /**
+        1.repeat()
+        2.includes(),startsWith(),endsWidth()
+    */
+    let str1 = 'asd';
+    console.log(str1.repeat(3))
+    console.log(str1.includes('s'))
+    console.log(str1.startsWith('a'))
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+    
+        1.简写；
+        2.reset参数形式为（...变量名），用于获取函数多余的参数，这样不需要使用arguments对象了，
+        reset参数搭配的变量是一个数组，这个数组将多余的参数放入到数组中。
+        reset叫剩余参数，后面不能再加参数，否则会报错。
+    
+    */
+    function sum(a,b,...arr){
+        console.log(a,b);
+        console.log(...arr);
+        let sum = 0;
+        for(var i = 0,len = arr.length;i < len;i++){
+            sum += arr[i];
+        }
+        console.log(sum);
+    }
+
+    sum(1,2,3,4,5);
+
+
+    /**
+    
+        箭头函数
+        使用箭头（ => ）定义函数。
+        参数不为一个（即零个或多个）时，要用小括号（）包裹参数，
+        参数为一个时可直接写。
+        返回值为一行语句且不为对象时可直接返回，返回值为一行语句且为对象时要用小括号（）包裹对象。
+        返回值为多行语句时要用 return？？？？？？？
+        箭头函数体内没有自己的this对象，所有使用的时候，其内部的this就是定义时所在环境的对象，而不是使用时所在环境的对象。
+        箭头函数不能使用call,apply,bind去改变其内部的this指向。
+        箭头函数内没有arguments对象，如果用可以使用reset参数代替。
+        箭头函数不可以使用new命令，不可以当做构造函数，否则会报错。
+        箭头函数不能当做Generator函数。
+    */
+
+    const fn = a => a;
+    const fn2 = function(a){
+        return a
+    }
+    console.log(fn(1));
+    console.log(fn2(2));
+</script>
+</html>

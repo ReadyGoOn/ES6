@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        1.Miaov中的constructor方法是构造方法，this关键字代表实力对象，也就是ES5中的构造函数Miaov，对应ES6的Miaov这个类的构造方法。
+    </p>
+    <p>
+        2.Miaov这个类除了构造方法还定义了一个print方法，注意在定义类的方法时，前面不要加上function这个关键字。直接把
+        函数的定义直接放进去就可以了，另外方法之间不需要逗号，分割，加了就会报错。
+    </p>
+    <p>
+        3.构造函数的prototype属性，在ES6的‘类’上继续存储，而且类的所有方法都定义在类的prototype属性上。
+    </p>
+    <p>
+        4.定义在类中的方法都是不可枚举的。
+    </p>
+    <p>
+        5.constructor方法时类默认的方法，通过new命令生成对象类实例时，会自动调用该方法。一个雷必须有constructor方法，
+        如果没有定义，一个空的constructor方法会被默认添加。
+    </p>
+    <p>
+        6.生成实例类对象的写法，与ES5完全一样，也是使用new命令，如果忘记加上new，像函数那样调用class，将会报错。
+    </p>
+    
+</body>
+<script>
+    //1.Miaov中的constructor方法是构造方法，this关键字代表实力对象，也就是ES5中的构造函数Miaov，对应ES6的Miaov这个类的构造方法。
+    //2.Miaov这个类除了构造方法还定义了一个print方法，注意在定义类的方法时，前面不要加上function这个关键字。直接把
+    //函数的定义直接放进去就可以了，另外方法之间不需要逗号，分割，加了就会报错。
+    //3.构造函数的prototype属性，在ES6的‘类’上继续存储，而且类的所有方法都定义在类的prototype属性上。
+    //4.定义在类中的方法都是不可枚举的。
+    //5.constructor方法时类默认的方法，通过new命令生成对象类实例时，会自动调用该方法。一个雷必须有constructor方法，
+    //如果没有定义，一个空的constructor方法会被默认添加。
+    //6.生成实例类对象的写法，与ES5完全一样，也是使用new命令，如果忘记加上new，像函数那样调用class，将会报错。
+    class Miaov {
+        constructor(a,b){
+            this.a = a;
+            this.b = b;
+            return this;
+        }
+        print(){
+            console.log(this.a + ',' + this.b)
+        }
+    };
+    console.log(typeof Miaov);
+    const miaov = new Miaov('hello','world').print();
+    /**
+    子类继承父类使用extend关键字，
+    为父类指定静态方法，使用static方法名
+    supper
+        -在构造函数中可当做一个函数来使用。相当于调用父级的构造函数。
+        -在原型方法中，可以当做一个对象来使用，相当于父类的原型对象，并且会自动绑定this到子类上。
+    
+    */
+
+    /**
+    
+    数组
+    Array.from();
+    Array.isArray()
+    Array.of()
+    Array.isArray()
+    arr.find(function(){});
+    arr.findIndex(function(){});
+    
+    */
+
+        var obj = {
+            fu1:function(){
+                console.log(1);
+            },
+            fu2(){
+                console.log(2);
+            }
+        }
+
+        obj.fu1();
+        obj.fu2();
+
+    /***
+    对象
+    简写：
+    Object.is(a,b);判断a,b是否一样，值和地址。
+    Object.assign();用于对象合并，将原对象的所有枚举属性，复制到目标对象。
+
+    */
+    var a = {
+        a:1,
+        b:3
+    }
+    var b = {
+        a:{
+            k:1,b:2
+        },
+        b:5
+    }
+    Object.assign(b,a);
+    console.log(b);
+</script>
+
+</html>
